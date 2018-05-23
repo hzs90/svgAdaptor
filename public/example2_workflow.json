@@ -1,0 +1,156 @@
+[
+    {
+        "id": "cf773b62.fb4db8",
+        "type": "wf-start",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "3f7b492e.2752e6"
+            ]
+        ]
+    },
+    {
+        "id": "d7c0dd0e.f28e",
+        "type": "wf-processing-fix",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "processing": "fixtures",
+        "on_error": "cancel",
+        "on_fatal": "cancel",
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "e98b77b9.99acd8"
+            ],
+            [
+                "19b0040b.7f2b6c"
+            ]
+        ]
+    },
+    {
+        "id": "e98b77b9.99acd8",
+        "type": "wf-end",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "x": 690,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "19b0040b.7f2b6c",
+        "type": "wf-processing-seq",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "processing": "sequences",
+        "on_error": "cancel",
+        "on_fatal": "cancel",
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "d7c0dd0e.f28e"
+            ],
+            [
+                "ec936c76.9260c"
+            ]
+        ]
+    },
+    {
+        "id": "ec936c76.9260c",
+        "type": "wf-robot-position",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "Position_Nbr": "2",
+        "Position_Nbr_def": "wf",
+        "Part_Index": 0,
+        "Part_Index_def": "run",
+        "Program_Nbr": 0,
+        "Program_Nbr_def": "run",
+        "Spray_Distance": 0,
+        "Spray_Distance_def": "run",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "446cf045.1e239"
+            ]
+        ]
+    },
+    {
+        "id": "3f7b492e.2752e6",
+        "type": "wf-robot-position",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "Position_Nbr": 1,
+        "Position_Nbr_def": "wf",
+        "Part_Index": "1",
+        "Part_Index_def": "wf",
+        "Program_Nbr": "1",
+        "Program_Nbr_def": "wf",
+        "Spray_Distance": "1",
+        "Spray_Distance_def": "wf",
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "d7c0dd0e.f28e"
+            ]
+        ]
+    },
+    {
+        "id": "f645b36.aadf35",
+        "type": "wf-robot-path",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "Program_Nbr": 1,
+        "Program_Nbr_def": "run",
+        "Path_Nbr": 1,
+        "Path_Nbr_def": "run",
+        "Spray_Distance": 1,
+        "Spray_Distance_def": "run",
+        "TCP_Speed": 1,
+        "TCP_Speed_def": "run",
+        "Part_Index": 1,
+        "Part_Index_def": "run",
+        "Nbr_Of_Cycles": 1,
+        "Nbr_Of_Cycles_def": "run",
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "19b0040b.7f2b6c"
+            ]
+        ]
+    },
+    {
+        "id": "dff0ec8a.825c7",
+        "type": "wf-inject",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "simulation": true,
+        "noerr": 0,
+        "x": 130,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "446cf045.1e239",
+        "type": "wf-paramset",
+        "z": "2e4a541d.46a75c",
+        "name": "",
+        "Paramset_def": "run",
+        "Paramset": 0,
+        "process": 0,
+        "x": 380,
+        "y": 540,
+        "wires": [
+            [
+                "f645b36.aadf35"
+            ]
+        ]
+    }
+]

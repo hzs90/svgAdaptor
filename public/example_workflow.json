@@ -1,0 +1,416 @@
+[
+    {
+        "id": "c13beb9.1182e18",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "6ec2a277.7bd1bc",
+        "type": "inject",
+        "z": "c13beb9.1182e18",
+        "name": "Start Workflow",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 143,
+        "y": 75,
+        "wires": [
+            [
+                "e9ee399d.852568"
+            ]
+        ]
+    },
+    {
+        "id": "e9ee399d.852568",
+        "type": "switch",
+        "z": "c13beb9.1182e18",
+        "name": "Parallel",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 331,
+        "y": 75,
+        "wires": [
+            [
+                "b283f533.c01068"
+            ],
+            [
+                "3403d709.bb90e8"
+            ]
+        ]
+    },
+    {
+        "id": "b283f533.c01068",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Gun Position",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 516,
+        "y": 67,
+        "wires": [
+            [
+                "885759be.a4d8d8"
+            ]
+        ]
+    },
+    {
+        "id": "3403d709.bb90e8",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Activate Process",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 539,
+        "y": 111,
+        "wires": [
+            [
+                "885759be.a4d8d8"
+            ]
+        ]
+    },
+    {
+        "id": "885759be.a4d8d8",
+        "type": "join",
+        "z": "c13beb9.1182e18",
+        "name": " ",
+        "mode": "auto",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "x": 736,
+        "y": 79,
+        "wires": [
+            [
+                "625bbdff.4ae844"
+            ]
+        ]
+    },
+    {
+        "id": "625bbdff.4ae844",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Gun Position",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 141,
+        "y": 264,
+        "wires": [
+            [
+                "256bbc0.b4d4744"
+            ]
+        ]
+    },
+    {
+        "id": "256bbc0.b4d4744",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Start Runs",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 323,
+        "y": 263,
+        "wires": [
+            [
+                "fd1e621d.5673d"
+            ]
+        ]
+    },
+    {
+        "id": "fd1e621d.5673d",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Loop",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 506,
+        "y": 262,
+        "wires": [
+            [
+                "671aca56.5a4684"
+            ]
+        ]
+    },
+    {
+        "id": "671aca56.5a4684",
+        "type": "switch",
+        "z": "c13beb9.1182e18",
+        "name": "Parallel",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 134,
+        "y": 373,
+        "wires": [
+            [
+                "c8f8e37b.f6d8"
+            ],
+            [
+                "778e17fe.802c28"
+            ]
+        ]
+    },
+    {
+        "id": "c8f8e37b.f6d8",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Load Recipe",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 348,
+        "y": 362,
+        "wires": [
+            [
+                "2750858.4b8b57a"
+            ]
+        ]
+    },
+    {
+        "id": "778e17fe.802c28",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Start Rotation",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 365,
+        "y": 432,
+        "wires": [
+            [
+                "2750858.4b8b57a"
+            ],
+            [
+                "fd1e621d.5673d"
+            ]
+        ]
+    },
+    {
+        "id": "2750858.4b8b57a",
+        "type": "join",
+        "z": "c13beb9.1182e18",
+        "name": " ",
+        "mode": "auto",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "x": 559,
+        "y": 377,
+        "wires": [
+            [
+                "fdf2c66.03e7238"
+            ]
+        ]
+    },
+    {
+        "id": "fdf2c66.03e7238",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Start Material",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 747,
+        "y": 374,
+        "wires": [
+            [
+                "873f3a49.37a1e8"
+            ]
+        ]
+    },
+    {
+        "id": "873f3a49.37a1e8",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Execute Sequencer",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 175,
+        "y": 537,
+        "wires": [
+            [
+                "f43f8a2a.5acb38"
+            ]
+        ]
+    },
+    {
+        "id": "f43f8a2a.5acb38",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Gun Position",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 405,
+        "y": 534,
+        "wires": [
+            [
+                "1937befe.378ac1"
+            ]
+        ]
+    },
+    {
+        "id": "1937befe.378ac1",
+        "type": "switch",
+        "z": "c13beb9.1182e18",
+        "name": "Parallel",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 152,
+        "y": 629,
+        "wires": [
+            [
+                "e9d57997.1a91d8"
+            ],
+            [
+                "94c23f82.6a144"
+            ]
+        ]
+    },
+    {
+        "id": "e9d57997.1a91d8",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Start Material",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 391,
+        "y": 623,
+        "wires": [
+            [
+                "9f79023.dd55b"
+            ]
+        ]
+    },
+    {
+        "id": "94c23f82.6a144",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Start Rotation",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 394,
+        "y": 701,
+        "wires": [
+            [
+                "9f79023.dd55b"
+            ]
+        ]
+    },
+    {
+        "id": "9f79023.dd55b",
+        "type": "join",
+        "z": "c13beb9.1182e18",
+        "name": " ",
+        "mode": "auto",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "x": 586,
+        "y": 654,
+        "wires": [
+            [
+                "c8a70c98.01b85"
+            ]
+        ]
+    },
+    {
+        "id": "c8a70c98.01b85",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Stop Process",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 750,
+        "y": 653,
+        "wires": [
+            [
+                "3bb35677.c49c1a"
+            ]
+        ]
+    },
+    {
+        "id": "3bb35677.c49c1a",
+        "type": "function",
+        "z": "c13beb9.1182e18",
+        "name": "Gun Position",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 927,
+        "y": 654,
+        "wires": [
+            []
+        ]
+    }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id":"7e406830.bbb7c8",
+    "type":"tab",
+    "label":"Flow 1",
+    "disabled":false,
+    "info":""
+  },
+  {
+    "id":"37b28863.8d8188",
+    "type":"function",
+    "z":"7e406830.bbb7c8",
+    "name":"func1",
+    "func":"\nreturn msg;",
+    "outputs":1,
+    "noerr":0,
+    "x":524.9999809265137,
+    "y":239.00002098083496,
+    "wires":[["ddc253bc.64854"]]
+  },
+  {
+    "id":"ddc253bc.64854",
+    "type":"function",
+    "z":"7e406830.bbb7c8",
+    "name":"func2",
+    "func":"\nreturn msg;",
+    "outputs":1,
+    "noerr":0,
+    "x":721.0694808959961,
+    "y":231.31253147125244,
+    "wires":[["8acc7192.ba899"]]
+  },
+  {
+    "id":"8acc7192.ba899",
+    "type":"function",
+    "z":"7e406830.bbb7c8",
+    "name":"func3",
+    "func":"\nreturn msg;",
+    "outputs":1,
+    "noerr":0,
+    "x":916.017333984375,
+    "y":245.0104217529297,
+    "wires":[["54f7440c.a7ba3c"]]
+  },
+
+  {
+    "id":"62665824.eee308",
+    "type":"inject",
+    "z":"7e406830.bbb7c8",
+    "name":"start",
+    "topic":"",
+    "payload":"",
+    "payloadType":"date",
+    "repeat":"",
+    "crontab":"",
+    "once":false,
+    "onceDelay":0.1,
+    "x":272.0833396911621,
+    "y":266.9583625793457,
+    "wires":[["37b28863.8d8188"]]
+  },
+  {
+    "id":"54f7440c.a7ba3c",
+    "type":"function",
+    "z":"7e406830.bbb7c8",
+    "name":"func4",
+    "func":"\nreturn msg;",
+    "outputs":1,
+    "noerr":0,
+    "x":1106.017333984375,
+    "y":241.0104217529297,
+    "wires":[[]]
+  }
+]
